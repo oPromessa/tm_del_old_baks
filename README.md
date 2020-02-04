@@ -28,7 +28,7 @@ $ sudo tm_del_old_baks.sh
 ## Configuration
 * Edit variable machin ewithin file. 
 ```bash
-machine=Donald
+machine=YOURMACHINE
 ```
 
 ## Usage/Arguments/Options
@@ -40,7 +40,41 @@ tm_del_old_baks.sh: -v: Verbose: show (partial) list of files to be deleted.
 tm_del_old_baks.sh: -r: Dry run: echo commands but do not execute
 tm_del_old_baks.sh: -f: Force execution of delete backups without asking
 ```
-
+### Example
+```
+18:04:11 Documents[937]> sudo  ./deletebackups.sh -vf
+Password:
+dryrun=, verbose=1, force_run=, Leftovers: 
+----------------
+/Volumes/Time Machine Backups/Backups.backupdb/YOURMACHINE/2019-09-28-211904
+/Volumes/Time Machine Backups/Backups.backupdb/YOURMACHINE/2019-10-26-034833
+/Volumes/Time Machine Backups/Backups.backupdb/YOURMACHINE/2019-11-09-034834
+/Volumes/Time Machine Backups/Backups.backupdb/YOURMACHINE/2019-11-16-034644
+/Volumes/Time Machine Backups/Backups.backupdb/YOURMACHINE/2019-11-23-034747
+/Volumes/Time Machine Backups/Backups.backupdb/YOURMACHINE/2019-11-30-034432
+/Volumes/Time Machine Backups/Backups.backupdb/YOURMACHINE/2019-12-07-034942
+/Volumes/Time Machine Backups/Backups.backupdb/YOURMACHINE/2019-12-14-034909
+/Volumes/Time Machine Backups/Backups.backupdb/YOURMACHINE/2019-12-21-034705
+/Volumes/Time Machine Backups/Backups.backupdb/YOURMACHINE/2019-12-28-034743
+----------------
+/dev/disk2s1 on / (apfs, local, journaled)
+devfs on /dev (devfs, local, nobrowse)
+/dev/disk2s4 on /private/var/vm (apfs, local, noexec, journaled, noatime, nobrowse)
+map -hosts on /net (autofs, nosuid, automounted, nobrowse)
+map auto_home on /home (autofs, automounted, nobrowse)
+//Time%20Machine%20User@server._afpovertcp._tcp.local./Time%20Machine%20Folder on /Volumes/com.apple.TimeMachine.Time Machine Folder-F7099937-ACDF-CDEF-9090-67769BC3CB3A (afpfs, nobrowse)
+/dev/disk4s2 on /Volumes/Time Machine Backups (hfs, local, nodev, nosuid, journaled, nobrowse)
+----------------
+---------- Month: 2019-09
+----------
+---------- Month: 2019-10
+----------
+---------- Month: 2019-11
+Deleting: /Volumes/Time Machine Backups/Backups.backupdb/YOURMACHINE/2019-11-09-034834
+Deleted (6.0G): /Volumes/Time Machine Backups/Backups.backupdb/YOURMACHINE/2019-11-09-034834
+Total deleted: 6.0G
+Deleting: /Volumes/Time Machine Backups/Backups.backupdb/YOURMACHINE/2019-11-16-034644
+```
 ## Recognition
 My family!
 
@@ -49,7 +83,6 @@ You may use this code however you see fit in any form whatsoever.
 And enjoy!!!
 
 ## Questions & Answers
-----------------------
 * Q: Who is this script designed for?
    - Those people comfortable with the command line that want to have control on the cleanup of old backups by time Machine.
    
