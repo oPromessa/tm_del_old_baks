@@ -16,8 +16,8 @@ IF YOU FIND A BUG, PLEASE REPORT IT.
 
 ## Requirements
 * MAC
-* ibash
-* Must be run as _root_ with =sudo= to have permission to run =tmutil= (Time Machine Command/line utility) commmand.
+* bash
+* Must be run as _root_ with `sudo` to have permission to run `tmutil` (Time Machine Command/line utility) commmand.
 
 ## Setup on MAC
 * Place file on a folder an run with "sudo ..."
