@@ -1,6 +1,6 @@
 # tm_del_old_baks
 -----------------
-by oPromessa, 2020, V0.0.1 [![Master Build Status]
+by oPromessa, 2020, V0.0.1
 * Published on [https://github.com/oPromessa/tm_del_old_baks/](https://github.com/oPromessa/tm_del_old_baks/)
 
 ## Description
