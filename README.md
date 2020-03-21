@@ -26,7 +26,7 @@ $ sudo tm_del_old_baks.sh
 ```
 
 ## Configuration
-* Edit variable machin ewithin file. 
+* Edit variable machin ewithin file.
 ```bash
 machine=YOURMACHINE
 ```
@@ -44,7 +44,7 @@ tm_del_old_baks.sh: -f: Force execution of delete backups without asking
 ```
 18:04:11 Documents[937]> sudo  ./deletebackups.sh -vf
 Password:
-dryrun=, verbose=1, force_run=, Leftovers: 
+dryrun=, verbose=1, force_run=, Leftovers:
 ----------------
 /Volumes/Time Machine Backups/Backups.backupdb/YOURMACHINE/2019-09-28-211904
 /Volumes/Time Machine Backups/Backups.backupdb/YOURMACHINE/2019-10-26-034833
@@ -75,6 +75,15 @@ Deleted (6.0G): /Volumes/Time Machine Backups/Backups.backupdb/YOURMACHINE/2019-
 Total deleted: 6.0G
 Deleting: /Volumes/Time Machine Backups/Backups.backupdb/YOURMACHINE/2019-11-16-034644
 ```
+
+```
+hdiutil compact /Volumes/TM/YOURMACHINE.sparsebundle/
+Starting to compact…
+Reclaiming free space…
+.................................................................................................................................................................
+Finishing compaction…
+Reclaimed 36.6 GB out of 7.0 TB possible.
+```
 ## Recognition
 My family!
 
@@ -85,7 +94,6 @@ And enjoy!!!
 ## Questions & Answers
 * Q: Who is this script designed for?
    - Those people comfortable with the command line that want to have control on the cleanup of old backups by time Machine.
-   
+
 * Q: Is this script feature complete and fully tested?
    - Nope. It's a work in progress. I've tested it as needed for my needs, but it's possible to build additional features by contributing to the script.
-  

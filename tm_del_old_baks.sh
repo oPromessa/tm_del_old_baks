@@ -4,7 +4,10 @@
 OPTIND=1         # Reset in case getopts has been used previously in the shell.
 
 # Config the name of your MAC machine
-machine=Donald
+machine=$(scutil --get ComputerName)
+
+# Config the Time Machine server name
+server=katuiti
 
 # Initialize our own variables:
 output_file=""
@@ -87,8 +90,11 @@ echo $0: ready to go for hdutil COMPACT [n]/y?
 read x
 if [ "$x" == "y" ]
 then
-	echo $0: Executing HDUTIL.
-	$dryrun hdiutil compact /Volumes/Time\ Machine\ Folder/"${machine}.sparsebundle"
+	echo $0: Executing HDUTIL. Connecting to ${server}. You will be asked to input the user and password.
+	# http://sysadminnotebook.blogspot.com/2014/07/reclaim-free-space-from-time-machine.html
+	$dryrun mkdir -p /Volumes/TM
+	$dryrun mount_afp -i 'afp://${server}/Time Machine Folder' /Volumes/TM && $dryrun hdiutil compact /Volumes/TM/"${machine}.sparsebundle"
+	$dryrun umount /Volumes/TM/
 else
 	echo $0: Not executing HDUTIL.
 fi
