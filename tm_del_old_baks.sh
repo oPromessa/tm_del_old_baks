@@ -22,7 +22,7 @@ function show_help () {
 	echo "$0: -v: Verbose: show (partial) list of files to be deleted."
 	echo "$0: -r: Dry run: echo commands but do not execute"
 	echo "$0: -f: Force execution of delete backups without asking"
-	echo "$0: -M <hostanme>: Your hostname"
+	echo "$0: -M <hostname>: Your hostname"
 	echo "$0: by oPromessa, 2020"
 }
 
